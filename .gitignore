@@ -1,0 +1,17 @@
+# Ignore build artifacts
+*.log
+*.tmp
+.DS_Store
+
+# Ignore IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Ignore OS files
+Thumbs.db
+desktop.ini
+
+# Ignore temporary K8s files
+k8s/deployment-temp.yaml

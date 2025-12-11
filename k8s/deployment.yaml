@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkins-test-app
+  labels:
+    app: jenkins-test-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: jenkins-test-app
+  template:
+    metadata:
+      labels:
+        app: jenkins-test-app
+    spec:
+      containers:
+      - name: jenkins-test-app
+        image: sudharshan1305/jenkins-test-app:latest
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "100m"
+          limits:
+            memory: "128Mi"
+            cpu: "200m"
